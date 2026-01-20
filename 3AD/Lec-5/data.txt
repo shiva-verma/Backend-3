@@ -1,0 +1,19 @@
+The volcano rabbit (Romerolagus diazi) (Spanish: conejo de los volcanes), also known as the teporingo or zacatuche, 
+is a species of small rabbit that lives in pine and alder forests on volcanic slopes in Mexico. It is the only species 
+in the genus Romerolagus and is considered to be the most primitive species among the rabbits and hares. It has small rounded ears, 
+short legs, a large forehead, and short, thick fur. It is one of the world's smallest rabbits, lives in groups consisting of between 
+two and five members, and makes burrows (underground nests) and runways (worn-down, frequently traveled surface paths) among bunchgrasses. Up to three young are produced per litter, 
+born in nests formed from shallow depressions in the ground lined with fur and plant matter.
+
+Uniquely among the rabbits, the volcano rabbit emits high-pitched sounds to warn other rabbits of danger, a habit common in the related pikas.
+ It is awake and most active in the evening and early morning. Populations have been estimated as approximately 7,000 adult individuals over their 
+ entire range. Human developments surrounding the volcano rabbit's habitat—including overgrazing, hunting, and burning of the species' preferred scrublands—have 
+ caused significant declines in population, even in protected parks. Both the IUCN and the Mexican government consider the volcano rabbit an endangered species, and it is 
+ listed on Appendix I of the CITES treaty, which is intended to restrict trade of the animal.
+
+Taxonomy and etymology
+Romerolagus diazi was first described by the head of the Mexican Geographical and Exploring Commission, Fernando Ferrari-Pérez, in 1893 as a member of the hares (genus Lepus), using the scientific name Lepus diazi and common name conejo del Volcán (volcano rabbit).[4] The species name diazi honors the Mexican cartographer[5] Agustín Díaz, who published the work where the species was first described.[6] The type specimen was collected on the northeastern slopes of Ixtaccíhuatl, a volcano near San Martín Texmelucan, in the Mexican state of Puebla.[7][8] It
+
+cat data.txt
+grep "rabbit" data.txt
+wc -l
