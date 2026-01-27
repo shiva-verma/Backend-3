@@ -1,0 +1,14 @@
+[
+  {
+    "task": "Drink water",
+    "done": false
+  },
+  {
+    "task": "walking",
+    "done": false
+  },
+  {
+    "task": "sleeping",
+    "done": false
+  }
+]
