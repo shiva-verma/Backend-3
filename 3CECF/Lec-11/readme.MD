@@ -1,0 +1,1 @@
+MVC , EDA, CAP Theorme, NoSQL vs SQL
