@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Update Product page</h1>
+        <form action="/product/detail" method="post">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" placeholder="Enter product title" name="title" value="<%= product.title %>">
+            </div>
+            <div>
+                <label for="Description">Description</label>
+                <input type="text" placeholder="Enter product Description" name="description" value="<%= product.description %>">
+            </div>
+            <div>
+                <label for="Price">Price</label>
+                <input type="number" placeholder="Enter product Price" name="price">
+            </div>
+            <div>
+                <label for="Category">Category</label>
+                <input type="text" placeholder="Enter product Category" name="category">
+            </div>
+            <div>
+                <label for="Quantity">Quantity</label>
+                <input type="number" placeholder="Enter product Quantity" name="quantity">
+            </div>
+            <div>
+                <label for="Image">Image</label>
+                <input type="text" placeholder="Enter product Image" name="image">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
