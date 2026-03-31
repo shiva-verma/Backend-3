@@ -1,0 +1,19 @@
+<% layout('layout/boilerplate') -%>
+    <div>
+        <h1>Single Product page</h1>
+            <div class="card" style="width: 18rem;">
+                <img src="<%= product.image %>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><%= product.title  %></h5>
+                    <h5 class="card-title"><%= product.price  %></h5>
+                    <p class="card-text"><%= product.description  %></p>
+                    <a href="#" class="btn btn-primary">Buy</a>
+                    <a href="#" class="btn btn-warning">Add to cart</a>
+                    <a href="/edit/<%= product._id  %>" class="btn btn-danger">Edit</a>
+                    <form action="/product/<%= product._id%>?_method=DELETE" method="post">
+                      <button type="submit" class="btn btn-success">Delete</buton>
+                    </form>
+                </div>
+            </div>     
+    </div>
+  
