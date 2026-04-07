@@ -1,0 +1,27 @@
+const express = require('express');
+const User = require('../models/userModel');
+const passport = require('passport');
+const router = express.Router();
+
+router.get('/register', (req, res)=> {
+    res.render('register.ejs');
+});
+router.post('/signup',async(req,res)=>{
+    const {username, email, password, phone, role} = req.body;
+
+    const user = new User({username, email, phone, role});
+
+    await User.register(user, password);
+
+    res.redirect("/login")
+})
+
+router.get('/login', (req, res)=> {
+    res.render('login.ejs');
+});
+
+router.post("/signIn", passport.authenticate('local', {failureRedirect:"/register"}) ,(req, res)=>{
+    console.log(req.user);
+    res.redirect("/home")
+})
+module.exports = router;

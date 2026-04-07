@@ -7,24 +7,22 @@ const methodOverride = require('method-override')
 const ejsmate = require("ejs-mate")
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const Session = require("express-session");
+const session = require("express-session");
 
 const ejs = require("ejs");
 const app = express();
 
 dbConnect();
 
-var sess = {
+app.use(session({
   secret: 'keyboard cat',
   saveUninitialized: true,
   cookie: { 
-    secure: true, 
+    secure: false, 
     httpOnly:true,
-    maxAge:60*6*1000
+    maxAge:60*60*1000
   }
-}
-
-app.use(Session(sess));
+}));
 
 app.use(express.urlencoded({extended:true}));
 
@@ -39,16 +37,14 @@ app.use(passport.session());
 
 passport.use(new LocalStrategy(User.authenticate()));
 
-passport.use(passport.authenticate("Session"));
+passport.use(passport.authenticate("session"));
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
 app.use((req, res, next)=>{
-    console.log(req.user);
     res.locals.currUser = req.user;
-
     next();
 })
 
