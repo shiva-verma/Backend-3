@@ -28,7 +28,7 @@ const addProduct = async(req, res)=>{
 const singleProduct = async(req, res)=>{
     try {
         const productId = req.params.pid;
-        const product = await ProductModel.findById(productId);
+        const product = await ProductModel.findById(productId).populate("reviews");
         res.render("products/singleProduct.ejs", {product});
     } catch (error) {
         console.log(error);

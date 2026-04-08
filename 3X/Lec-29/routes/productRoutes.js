@@ -37,7 +37,19 @@ router.post("/review/:pid", async(req, res)=>{
 
     await product.save();
 
-    res.redirect(`product/${pid}`)
+    res.redirect(`/product/${pid}`)
+})
+
+//cart
+
+router.get("/cart/:pid", async(req, res, next)=>{
+    const productId = req.params.pid;
+
+    req.user.cart.push(productId);
+
+    await req.user?.save();
+
+    res.send("product added to cart")
 })
 
 
