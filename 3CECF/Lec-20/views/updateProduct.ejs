@@ -1,0 +1,31 @@
+<% layout("layout/boilerplate") -%>
+    <div>
+        <h1>Update Product page</h1>
+        <form action="/product/update/<%= product._id %>?_method=PATCH" method="post">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" placeholder="Enter product title" name="title" value="<%= product.title %>">
+            </div>
+            <div>
+                <label for="Description">Description</label>
+                <input type="text" placeholder="Enter product Description" name="description" value="<%= product.description %>">
+            </div>
+            <div>
+                <label for="Price">Price</label>
+                <input type="number" placeholder="Enter product Price" name="price" value="<%= product.price %>">
+            </div>
+            <div>
+                <label for="Category">Category</label>
+                <input type="text" placeholder="Enter product Category" name="category" value="<%= product.category %>">
+            </div>
+            <div>
+                <label for="Quantity">Quantity</label>
+                <input type="number" placeholder="Enter product Quantity" name="quantity" value="<%= product.quantity %>">
+            </div>
+            <div>
+                <label for="Image">Image</label>
+                <input type="text" placeholder="Enter product Image" name="image" value="<%= product.image %>">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
