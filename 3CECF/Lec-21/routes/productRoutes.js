@@ -38,5 +38,17 @@ router.post("/review/:pid", async(req, res)=>{
 
 })
 
+router.get("/cart/:pid", (req, res)=>{
+    const productId = req.params.pid;
+
+    const activeUser = req.user;
+
+    activeUser.cart.push(productId);
+
+    activeUser.save();
+
+    res.send("product added to cart successfully")
+})
+
 
 module.exports = router

@@ -4,7 +4,13 @@ const passportLocalMongoose = require("passport-local-mongoose")
 const userSchema = new mongoose.Schema({
     email:String,
     phone:Number,
-    role:String 
+    role:String,
+    cart:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Product"
+        }
+    ] 
 }, {timestamps:true})
 
 userSchema.plugin(passportLocalMongoose.default)
