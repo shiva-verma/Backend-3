@@ -52,6 +52,14 @@ router.get("/cart/:pid", async(req, res, next)=>{
     res.send("product added to cart")
 })
 
+router.get("/mycart", async(req, res)=>{
+    const loggedInUser = await req.user.populate("cart");
+
+    const cartItem = loggedInUser.cart;
+
+    res.render("products/cart.ejs", {cartItem});
+})
+
 
 
 module.exports = router;
