@@ -1,7 +1,7 @@
 const express = require("express");
 const ProductModel = require("../model/productSchema");
 const { getAllProducts, showAddProductForm, addProduct, singleProduct, showUpdateProductForm, updateProduct, deleteProduct } = require("../controllers/productController");
-const { isLoggedIn, isSeller, isBuyer, isOwnReview } = require("../middleware/authenticate");
+const { isLoggedIn, isSeller, isBuyer, isAuthorReview } = require("../middleware/authenticate");
 const Review = require("../model/reviewSchema");
 const Product = require("../model/productSchema");
 const router = express.Router();
@@ -32,7 +32,14 @@ router.post("/review/:pid", async(req, res)=>{
     const pid =  req.params.pid;
     const product = await Product.findById(pid);
 
-    const rid = await Review.create(req.body);
+    const review = new Review({
+        comment:req.body.comment,
+        rating:req.body.rating,
+        author:req.user._id
+    })
+
+    const rid = await review.save()
+    // const rid = await Review.create(req.body);
     product.reviews.push(rid);
 
     await product.save();
@@ -41,7 +48,7 @@ router.post("/review/:pid", async(req, res)=>{
 })
 
 //review deleted
-router.delete("/review/del/:rid/:pid", isBuyer , isOwnReview ,async(req, res)=>{
+router.delete("/review/del/:rid/:pid", isBuyer , isAuthorReview ,async(req, res)=>{
     try {
         const productId = req.params.pid;
     

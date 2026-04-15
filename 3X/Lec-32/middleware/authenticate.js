@@ -19,9 +19,9 @@ const isBuyer = (req, res, next)=>{
     res.redirect("/products")
 }
 
-const isOwnReview = (req, res, next)=>{
+const isAuthorReview = (req, res, next)=>{
 
 }
 
-module.exports = {isLoggedIn, isSeller, isBuyer, isOwnReview}
+module.exports = {isLoggedIn, isSeller, isBuyer, isAuthorReview}
 
